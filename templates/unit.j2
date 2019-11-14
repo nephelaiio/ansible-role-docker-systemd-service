@@ -8,8 +8,8 @@ PartOf=docker.service
 Requires=docker.service
 
 [Service]
-{% for key, value in service_systemd_options.iteritems() %}
-{{ key }}={{ value }}
+{% for key in service_systemd_options %}
+{{ key }}={{ service_systemd_options[value] }}
 {% endfor %}
 {% if container_env is defined %}
 {% if not 'EnvironmentFile' in service_systemd_options %}
