@@ -9,6 +9,7 @@
     name: '{{ service_name }}.service'
     enabled: false
     state: stopped
+  ignore_errors: yes
 
 - name: Remove unit {{ service_name }}.service
   file:
